@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Quest · Grade 6</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo" aria-label="English Quest home">
+        <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+        <span class="logo-text">English Quest</span>
+      </a>
+
+      <!-- Desktop navigation -->
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#" class="nav-link active" data-i18n="nav.home">Home</a>
+        <a href="#" class="nav-link" data-i18n="nav.about">About</a>
+        <span class="badge grade-badge" data-i18n="nav.grade">Grade 6</span>
+
+        <!-- Language switcher -->
+        <button class="lang-switcher" id="langSwitcher" aria-label="Switch language" type="button">
+          <svg class="lang-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span class="lang-current" id="langCurrent">EN</span>
+        </button>
+      </nav>
+
+      <!-- Mobile menu toggle -->
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile navigation menu -->
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="#" class="nav-link active" data-i18n="nav.home">Home</a>
+      <a href="#" class="nav-link" data-i18n="nav.about">About</a>
+      <span class="badge grade-badge mobile-badge" data-i18n="nav.grade">Grade 6</span>
+      <button class="lang-switcher lang-switcher-mobile" id="langSwitcherMobile" aria-label="Switch language" type="button">
+        <svg class="lang-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <span class="lang-current" id="langCurrentMobile">EN</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="hero-badge" data-i18n="hero.badge">✦ English Quest</span>
+          <h1 class="hero-title" data-i18n="hero.title">Hello, Young Learner!</h1>
+          <h2 class="hero-subtitle" data-i18n="hero.subtitle">Ready to learn English?</h2>
+          <p class="hero-description" data-i18n="hero.description">
+            Explore your lessons, practice your skills, and achieve your learning goals!
+          </p>
+          <button class="btn btn-primary btn-explore" id="exploreBtn">
+            <span data-i18n="hero.button">Explore Units</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="hero-illustration" aria-hidden="true">
+          <svg viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-svg">
+            <circle cx="200" cy="160" r="130" fill="url(#heroGradient)" opacity="0.25"/>
+            <rect x="70" y="210" width="120" height="30" rx="6" fill="#8B75E5" opacity="0.9"/>
+            <rect x="80" y="180" width="110" height="30" rx="6" fill="#3978E8" opacity="0.9"/>
+            <rect x="90" y="150" width="100" height="30" rx="6" fill="#FFC857" opacity="0.95"/>
+            <rect x="100" y="120" width="90" height="30" rx="6" fill="#29A68B" opacity="0.9"/>
+            <path d="M140 100 L200 80 L260 100 L200 120 Z" fill="#3978E8" opacity="0.85"/>
+            <path d="M140 100 L200 120 L200 140 L140 120 Z" fill="#5B8DEF" opacity="0.7"/>
+            <path d="M260 100 L200 120 L200 140 L260 120 Z" fill="#2B5FB0" opacity="0.7"/>
+            <g transform="translate(240 40)">
+              <rect x="10" y="10" width="50" height="10" rx="2" fill="#253858"/>
+              <path d="M0 10 L35 0 L70 10 L35 20 Z" fill="#253858"/>
+              <rect x="30" y="2" width="10" height="5" rx="1" fill="#FFC857"/>
+            </g>
+            <path d="M320 60 L325 72 L338 74 L328 82 L331 95 L320 88 L309 95 L312 82 L302 74 L315 72 Z" fill="#FFC857" opacity="0.9"/>
+            <path d="M80 70 L84 78 L93 79 L86 85 L88 94 L80 89 L72 94 L74 85 L67 79 L76 78 Z" fill="#FFC857" opacity="0.7"/>
+            <circle cx="340" cy="200" r="8" fill="#29A68B" opacity="0.5"/>
+            <circle cx="60" cy="170" r="6" fill="#8B75E5" opacity="0.5"/>
+            <defs>
+              <linearGradient id="heroGradient" x1="0" y1="0" x2="400" y2="320">
+                <stop offset="0%" stop-color="#3978E8"/>
+                <stop offset="100%" stop-color="#8B75E5"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== STATISTICS SECTION ========== -->
+    <section class="stats" id="stats">
+      <div class="container stats-container">
+        <div class="stat-card" data-stat="units">
+          <div class="stat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-number" id="statUnits">8</span>
+            <span class="stat-label" data-i18n="stats.units">Learning Units</span>
+          </div>
+        </div>
+
+        <div class="stat-card" data-stat="lessons">
+          <div class="stat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              <line x1="8" y1="7" x2="16" y2="7"/>
+              <line x1="8" y1="11" x2="14" y2="11"/>
+            </svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-number" id="statLessons">48</span>
+            <span class="stat-label" data-i18n="stats.lessons">Lessons</span>
+          </div>
+        </div>
+
+        <div class="stat-card" data-stat="quizzes">
+          <div class="stat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-number" id="statQuizzes">8</span>
+            <span class="stat-label" data-i18n="stats.quizzes">Unit Quizzes</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== UNITS SECTION ========== -->
+    <section class="units" id="units">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="units.title">Explore Your Units</h2>
+          <p class="section-subtitle" data-i18n="units.subtitle">Choose a unit and start your learning journey!</p>
+        </div>
+
+        <div class="units-grid" id="unitsGrid" role="list">
+          <!-- dynamically populated by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== LEARNING TIP ========== -->
+    <section class="learning-tip" id="learningTip">
+      <div class="container">
+        <div class="tip-card">
+          <div class="tip-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6"/>
+              <path d="M10 22h4"/>
+              <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1.34.54 2.55 1.5 3.5.76.76 1.23 1.52 1.41 2.5"/>
+              <line x1="12" y1="2" x2="12" y2="4"/>
+              <line x1="4" y1="6" x2="5.5" y2="7.5"/>
+              <line x1="20" y1="6" x2="18.5" y2="7.5"/>
+            </svg>
+          </div>
+          <div class="tip-content">
+            <h3 class="tip-title" data-i18n="tip.title">Learning Tip</h3>
+            <p class="tip-text" data-i18n="tip.text">Practice a little every day. Small steps lead to big achievements!</p>
+          </div>
+          <div class="tip-illustration" aria-hidden="true">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="60" cy="60" r="48" fill="#FFC857" opacity="0.15"/>
+              <path d="M60 20 L65 35 L80 35 L68 45 L73 60 L60 50 L47 60 L52 45 L40 35 L55 35 Z" fill="#FFC857" opacity="0.8"/>
+              <circle cx="90" cy="80" r="8" fill="#29A68B" opacity="0.5"/>
+              <circle cx="30" cy="50" r="6" fill="#8B75E5" opacity="0.5"/>
+              <circle cx="85" cy="40" r="5" fill="#3978E8" opacity="0.4"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+          <span>English Quest</span>
+        </div>
+        <p class="footer-tagline" data-i18n="footer.tagline">Learn Something New Every Day.</p>
+        <p class="footer-sub" data-i18n="footer.sub">Grade 6 English Learning Platform</p>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer.copyright">&copy; 2025 English Quest. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== MODAL (Coming Soon) ========== -->
+  <div class="modal-overlay" id="comingSoonModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="modal-icon">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#3978E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
+      <h3 class="modal-title" id="modalTitle" data-i18n="modal.title">Coming Soon!</h3>
+      <p class="modal-text" id="modalText" data-i18n="modal.text">This unit will be available soon. Keep practicing!</p>
+      <button class="btn btn-primary modal-btn" id="modalBtn" data-i18n="modal.button">Got it!</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
