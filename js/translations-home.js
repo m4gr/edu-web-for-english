@@ -18,7 +18,7 @@ window.HOME_TRANSLATIONS = {
   'nav.about':         { en: 'About',               ar: 'حول' },
   'nav.grade':         { en: 'Grade 6',             ar: 'الصف السادس ابتدائي' },
 
-  'hero.badge':        { en: '✦ English Quest',     ar: '✦ مهمة الإنجليزية' },
+  'hero.badge':        { en: '✦ English Quest',     ar: '✦ تمرن الإنجليزية' },
   'hero.title':        { en: 'Hello, Young Learner!', ar: 'مرحباً أيها المتعلم الصغير!' },
   'hero.subtitle':     { en: 'Ready to practice for English?', ar: 'هل أنت مستعد لتمرن مادة الانجليزي؟' },
   'hero.description':  {
