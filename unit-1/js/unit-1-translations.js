@@ -243,22 +243,58 @@ window.UNIT_1_TRANSLATIONS = {
         ar: 'عندما يُسأل من أين أنت، أجب باسم بلدك.'
       }
     },
-    q4: {
-      text:        { en: 'Arrange the words to make a correct sentence:', ar: 'Arrange the words to make a correct sentence:' },
-      options:     { en: ['name', 'My', 'is', 'Layla'], ar: ['name', 'My', 'is', 'Layla'] },
-      correct:     { en: 'My name is Layla', ar: 'My name is Layla' },
+        q4: {
+      text: {
+        en: 'A: "I\'m from Egypt. Where are you from?" — B: "_____"',
+        ar: 'A: "I\'m from Egypt. Where are you from?" — B: "_____"'
+      },
+      options: {
+        en: [
+          'I am from Saudi Arabia.',
+          'I am twelve years old.',
+          'Yes, I do.',
+          'Thank you very much.'
+        ],
+        ar: [
+          'I am from Saudi Arabia.',
+          'I am twelve years old.',
+          'Yes, I do.',
+          'Thank you very much.'
+        ]
+      },
+      correct: { en: 'I am from Saudi Arabia.', ar: 'I am from Saudi Arabia.' },
       explanation: {
-        en: 'The correct order is: "My name is Layla."',
-        ar: 'الترتيب الصحيح هو: "My name is Layla."'
+        en: 'When someone tells you where they are from and asks you the same question, you reply with your own country.',
+        ar: 'عندما يخبرك أحدهم من أين هو ويسألك نفس السؤال، تجيب باسم بلدك.'
       }
     },
+
     q5: {
-      text:        { en: 'Arrange the words to make a correct sentence:', ar: 'Arrange the words to make a correct sentence:' },
-      options:     { en: ['from', 'are', 'Where', 'you'], ar: ['from', 'are', 'Where', 'you'] },
-      correct:     { en: 'Where are you from', ar: 'Where are you from' },
+      text: {
+        en: 'A: "Do you have any brothers or sisters?" — B: "_____"',
+        ar: 'A: "Do you have any brothers or sisters?" — B: "_____"'
+      },
+      options: {
+        en: [
+          'Yes, I have one brother and two sisters.',
+          'I am from Jordan.',
+          'My name is Layla.',
+          'Nice to meet you.'
+        ],
+        ar: [
+          'Yes, I have one brother and two sisters.',
+          'I am from Jordan.',
+          'My name is Layla.',
+          'Nice to meet you.'
+        ]
+      },
+      correct: {
+        en: 'Yes, I have one brother and two sisters.',
+        ar: 'Yes, I have one brother and two sisters.'
+      },
       explanation: {
-        en: 'The correct order is: "Where are you from?"',
-        ar: 'الترتيب الصحيح هو: "Where are you from?"'
+        en: 'When someone asks about your family, the natural answer is "Yes, I have..." or "No, I don\'t have..." — followed by details.',
+        ar: 'عندما يسأل أحدهم عن عائلتك، الإجابة الطبيعية هي "Yes, I have..." أو "No, I don\'t have..." مع التفاصيل.'
       }
     },
     q6: {

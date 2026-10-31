@@ -55,8 +55,8 @@ window.HOME_TRANSLATIONS = {
   'footer.tagline':    { en: 'Learn Something New Every Day.', ar: 'تعلّم شيئاً جديداً كل يوم.' },
   'footer.sub':        { en: 'Grade 6 English Learning Platform', ar: 'منصة تعلّم الإنجليزية للصف السادس ابتدائي' },
   'footer.copyright':  {
-    en: '© 2025 English Quest. All rights reserved.',
-    ar: '© 2025 مهمة الإنجليزية. جميع الحقوق محفوظة.'
+    en: '© 2026 English Quest. All rights reserved.',
+    ar: '© 2026 تعلّم الإنجليزية للصف السادس ابتدائي. جميع الحقوق محفوظة.'
   },
 
   'modal.title':       { en: 'Coming Soon!',        ar: 'قريباً!' },
