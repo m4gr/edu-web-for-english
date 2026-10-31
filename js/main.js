@@ -73,7 +73,7 @@ function applyDirection(lang) {
   if (DOM.langCurrentMobile) DOM.langCurrentMobile.textContent = label;
 
   document.title = lang === 'ar'
-    ? 'مهمة الإنجليزية · الصف السادس'
+    ? 'تمرّن الإنجليزية · الصف السادس'
     : 'English Quest · Grade 6';
 }
 
