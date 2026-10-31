@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1 · Getting to Know You · English Quest</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/unit-practice.css">
+</head>
+<body class="unit-page">
+
+  <header class="navbar unit-navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo" aria-label="English Quest home">
+        <i class="fa-solid fa-graduation-cap logo-icon"></i>
+        <span class="logo-text">English</span>
+      </a>
+
+      <div class="unit-nav-right">
+        <a href="../index.html" class="back-home-link">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span id="backHomeLabel">Back to Home</span>
+        </a>
+
+        <span class="unit-label-badge" id="unitLabelBadge">Unit 1</span>
+
+        <div class="nav-progress" aria-label="Unit progress">
+          <div class="nav-progress-track">
+            <div class="nav-progress-fill" id="navProgressFill" style="width: 0%"></div>
+          </div>
+          <span class="nav-progress-text" id="navProgressText">0%</span>
+        </div>
+
+        <button class="lang-switcher" id="langSwitcher" aria-label="Switch language" type="button">
+          <i class="fa-solid fa-globe lang-icon"></i>
+          <span class="lang-current" id="langCurrent">EN</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="unit-main">
+    <section class="unit-hero">
+      <div class="container unit-hero-container">
+        <div class="unit-hero-content">
+          <span class="unit-eyebrow" id="heroEyebrow">UNIT 01</span>
+          <h1 class="unit-hero-title" id="heroTitle">Getting to Know You</h1>
+          <p class="unit-hero-desc" id="heroDesc">
+            Let's improve your English skills through fun and interactive activities!
+          </p>
+
+          <div class="unit-hero-meta">
+            <div class="meta-chip">
+              <i class="fa-solid fa-layer-group"></i>
+              <span><strong>5</strong> <span id="heroSectionsLabel">Sections</span></span>
+            </div>
+            <div class="meta-chip">
+              <i class="fa-solid fa-list-check"></i>
+              <span><strong>30</strong> <span id="heroActivitiesLabel">Activities</span></span>
+            </div>
+            <div class="meta-chip meta-xp">
+              <i class="fa-solid fa-star"></i>
+              <span><strong id="heroXp">0</strong> <span id="heroXpLabel">XP earned</span></span>
+            </div>
+          </div>
+
+          <div class="unit-progress-block">
+            <div class="unit-progress-label">
+              <span id="heroProgressLabel">Unit Progress</span>
+              <span id="unitProgressPercent">0%</span>
+            </div>
+            <div class="progress-track progress-track-large">
+              <div class="progress-fill" id="unitProgressFill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="unit-hero-illustration" aria-hidden="true">
+          <svg viewBox="0 0 360 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="180" cy="150" r="120" fill="url(#unitGradient)" opacity="0.22"/>
+            <rect x="60" y="50" width="150" height="80" rx="20" fill="#FFFFFF" stroke="#3978E8" stroke-width="2.5"/>
+            <path d="M100 130 L90 152 L120 130 Z" fill="#FFFFFF" stroke="#3978E8" stroke-width="2.5" stroke-linejoin="round"/>
+            <rect x="80" y="72" width="80" height="8" rx="4" fill="#3978E8" opacity="0.8"/>
+            <rect x="80" y="90" width="110" height="8" rx="4" fill="#8B75E5" opacity="0.7"/>
+            <rect x="80" y="108" width="60" height="8" rx="4" fill="#FFC857"/>
+            <circle cx="260" cy="150" r="34" fill="#FFC857" opacity="0.9"/>
+            <circle cx="256" cy="146" r="6" fill="#253858"/>
+            <circle cx="272" cy="146" r="6" fill="#253858"/>
+            <path d="M255 162 Q264 170 273 162" stroke="#253858" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <circle cx="120" cy="210" r="30" fill="#8B75E5" opacity="0.9"/>
+            <circle cx="112" cy="206" r="5" fill="#253858"/>
+            <circle cx="126" cy="206" r="5" fill="#253858"/>
+            <path d="M113 220 Q119 226 125 220" stroke="#253858" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <path d="M290 110 Q305 95 315 105" stroke="#29A68B" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <circle cx="315" cy="105" r="6" fill="#29A68B"/>
+            <path d="M300 210 L304 220 L315 221 L306 228 L309 239 L300 232 L291 239 L294 228 L285 221 L296 220 Z" fill="#FFC857" opacity="0.9"/>
+            <path d="M50 190 L53 197 L61 198 L55 203 L57 211 L50 206 L43 211 L45 203 L39 198 L47 197 Z" fill="#3978E8" opacity="0.5"/>
+            <defs>
+              <linearGradient id="unitGradient" x1="0" y1="0" x2="360" y2="300">
+                <stop offset="0%" stop-color="#3978E8"/>
+                <stop offset="100%" stop-color="#8B75E5"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="sections-section">
+      <div class="container">
+        <div class="sections-header">
+          <h2 class="sections-title" id="sectionsTitle">Learning Sections</h2>
+          <p class="sections-subtitle" id="sectionsSubtitle">Pick a section and start practicing!</p>
+        </div>
+
+        <div class="sections-grid" id="sectionsGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer unit-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>English Quest</span>
+        </div>
+        <p class="footer-tagline">Learn Something New Every Day.</p>
+        <p class="footer-sub">Unit 1 · Getting to Know You</p>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 English Quest. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/unit-1-translations.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var LANG_KEY = 'englishQuestLang';
+      var UNIT_KEY = 'englishQuestUnit1';
+
+      var lang = 'en';
+      try {
+        var saved = localStorage.getItem(LANG_KEY);
+        if (saved === 'ar') lang = 'ar';
+      } catch (e) {}
+
+      var sections = window.UNIT_1_SECTIONS || [];
+
+      var progress = { sections: {}, xp: 0 };
+      try {
+        var raw = localStorage.getItem(UNIT_KEY);
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            progress = {
+              sections: parsed.sections || {},
+              xp: Number(parsed.xp) || 0
+            };
+          }
+        }
+      } catch (e) {}
+
+      function applyLangToDoc() {
+        var html = document.documentElement;
+        html.setAttribute('lang', lang);
+        html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+        var cur = document.getElementById('langCurrent');
+        if (cur) cur.textContent = lang === 'ar' ? 'AR' : 'EN';
+        document.title = lang === 'ar'
+          ? 'مهمة الإنجليزية · الوحدة ١'
+          : 'Unit 1 · Getting to Know You · English Quest';
+      }
+
+      function renderStaticLabels() {
+        var backHome = document.getElementById('backHomeLabel');
+        if (backHome) backHome.textContent = unit1T('common.nav.backHome', lang);
+
+        var badge = document.getElementById('unitLabelBadge');
+        if (badge) badge.textContent = unit1T('common.nav.unitLabel', lang);
+
+        var eyebrow = document.getElementById('heroEyebrow');
+        if (eyebrow) eyebrow.textContent = unit1T('hero.eyebrow', lang);
+
+        var title = document.getElementById('heroTitle');
+        if (title) title.textContent = unit1T('hero.title', lang);
+
+        var desc = document.getElementById('heroDesc');
+        if (desc) desc.textContent = unit1T('hero.desc', lang);
+
+        var secLabel = document.getElementById('heroSectionsLabel');
+        if (secLabel) secLabel.textContent = unit1T('hero.sections', lang);
+
+        var actLabel = document.getElementById('heroActivitiesLabel');
+        if (actLabel) actLabel.textContent = unit1T('hero.activities', lang);
+
+        var xpLabel = document.getElementById('heroXpLabel');
+        if (xpLabel) xpLabel.textContent = unit1T('hero.xpEarned', lang);
+
+        var progLabel = document.getElementById('heroProgressLabel');
+        if (progLabel) progLabel.textContent = unit1T('hero.progress', lang);
+
+        var secTitle = document.getElementById('sectionsTitle');
+        if (secTitle) secTitle.textContent = unit1T('hero.sectionsTitle', lang);
+
+        var secSub = document.getElementById('sectionsSubtitle');
+        if (secSub) secSub.textContent = unit1T('hero.sectionsSubtitle', lang);
+      }
+
+      function renderProgress() {
+        var totalPoints = 300;
+        var earned = 0;
+        Object.keys(progress.sections).forEach(function (id) {
+          var s = progress.sections[id];
+          if (s && s.completed) earned += Number(s.score) || 0;
+        });
+        var percent = totalPoints > 0 ? Math.round((earned / totalPoints) * 100) : 0;
+
+        var xpEl = document.getElementById('heroXp');
+        if (xpEl) xpEl.textContent = String(progress.xp || 0);
+
+        var pct = document.getElementById('unitProgressPercent');
+        if (pct) pct.textContent = percent + '%';
+
+        var fill = document.getElementById('unitProgressFill');
+        if (fill) fill.style.width = percent + '%';
+
+        var nFill = document.getElementById('navProgressFill');
+        if (nFill) nFill.style.width = percent + '%';
+
+        var nText = document.getElementById('navProgressText');
+        if (nText) nText.textContent = percent + '%';
+      }
+
+      function renderSectionCards() {
+        var grid = document.getElementById('sectionsGrid');
+        if (!grid) return;
+        grid.innerHTML = '';
+
+        sections.forEach(function (sec) {
+          var s = progress.sections[sec.id] || { completed: false, score: 0, total: 60, correct: 0 };
+
+          var card = document.createElement('div');
+          card.className = 'section-card' + (s.completed ? ' is-complete' : '');
+          card.setAttribute('data-section', sec.id);
+
+          var statusClass = 'status-new';
+          var statusIcon = '';
+          var statusLabel = unit1T('common.status.new', lang);
+          if (s.completed) {
+            statusClass = 'status-done';
+            statusIcon = '<i class="fa-solid fa-check"></i>';
+            statusLabel = unit1T('common.status.done', lang);
+          } else if (s.correct > 0) {
+            statusClass = 'status-progress';
+            statusLabel = unit1T('common.status.progress', lang);
+          }
+
+          var name = unit1T(sec.id + '.name', lang);
+          var desc = unit1T(sec.id + '.desc', lang);
+          var startLabel = s.completed
+            ? unit1T('common.start.retake', lang)
+            : unit1T('common.start.practice', lang);
+          var activitiesLabel = unit1T('common.section.activities', lang);
+          var scoreBadge = s.completed
+            ? '<span class="section-score-badge">' + s.score + ' / ' + s.total + '</span>'
+            : '';
+
+          card.innerHTML =
+            '<div class="section-card-top">' +
+              '<div class="section-icon"><i class="fa-solid ' + sec.icon + '"></i></div>' +
+              '<span class="section-status ' + statusClass + '">' + statusIcon + statusLabel + '</span>' +
+            '</div>' +
+            '<div>' +
+              '<h3 class="section-name">' + name + '</h3>' +
+              '<p class="section-desc">' + desc + '</p>' +
+            '</div>' +
+            '<div class="section-meta">' +
+              '<span class="section-activity-count"><i class="fa-solid fa-list-check"></i> 6 ' + activitiesLabel + '</span>' +
+              scoreBadge +
+            '</div>' +
+            '<a href="' + sec.id + '-practice.html" class="section-start-btn">' +
+              startLabel + ' <i class="fa-solid fa-arrow-right"></i>' +
+            '</a>';
+
+          grid.appendChild(card);
+        });
+      }
+
+      function renderAll() {
+        applyLangToDoc();
+        renderStaticLabels();
+        renderProgress();
+        renderSectionCards();
+      }
+
+      renderAll();
+
+      var switcher = document.getElementById('langSwitcher');
+      if (switcher) {
+        switcher.addEventListener('click', function (e) {
+          e.preventDefault();
+          lang = lang === 'en' ? 'ar' : 'en';
+          try {
+            localStorage.setItem(LANG_KEY, lang);
+          } catch (err) {}
+          renderAll();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

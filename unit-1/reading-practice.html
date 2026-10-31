@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reading Practice · Unit 1 · English Quest</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/unit-practice.css">
+</head>
+<body class="unit-page">
+
+  <header class="navbar unit-navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo" aria-label="English Quest home">
+        <i class="fa-solid fa-graduation-cap logo-icon"></i>
+        <span class="logo-text">English Quest</span>
+      </a>
+
+      <div class="unit-nav-right">
+        <a href="unit-1.html" class="back-home-link">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span id="backHomeLabel">Back to Unit</span>
+        </a>
+
+        <span class="unit-label-badge" id="unitLabelBadge">Unit 1</span>
+
+        <div class="nav-progress" aria-label="Unit progress">
+          <div class="nav-progress-track">
+            <div class="nav-progress-fill" id="navProgressFill" style="width: 0%"></div>
+          </div>
+          <span class="nav-progress-text" id="navProgressText">0%</span>
+        </div>
+
+        <button class="lang-switcher" id="langSwitcher" aria-label="Switch language" type="button">
+          <i class="fa-solid fa-globe lang-icon"></i>
+          <span class="lang-current" id="langCurrent">EN</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="unit-main">
+    <div id="exerciseView" class="unit-view">
+      <div class="container exercise-container">
+
+        <div class="exercise-topbar">
+          <a href="unit-1.html" class="btn-ghost" id="exitSectionBtn">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span id="exitLabel">Exit Section</span>
+          </a>
+          <div class="exercise-section-name" id="exerciseSectionName">Reading</div>
+          <div class="exercise-score-pill">
+            <i class="fa-solid fa-star"></i>
+            <span id="exerciseScore">0</span>
+          </div>
+        </div>
+
+        <div class="exercise-progress">
+          <div class="exercise-progress-label">
+            <span id="questionCounter">Question 1 of 6</span>
+            <span id="questionProgressPercent">0%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="questionProgressFill" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <div class="reading-passage" id="readingPassage">
+          <div class="reading-passage-header">
+            <i class="fa-solid fa-book-open"></i>
+            <span id="readingPassageTitle">Reading Passage</span>
+          </div>
+          <div class="reading-passage-body" id="readingPassageBody"></div>
+        </div>
+
+        <div class="question-card" id="questionCard">
+          <div class="question-header">
+            <span class="question-type-tag" id="questionTypeTag">Multiple Choice</span>
+            <span class="question-points" id="questionPoints">10 points</span>
+          </div>
+
+          <h3 class="question-text" id="questionText">Question text goes here</h3>
+
+          <div class="question-options" id="questionOptions"></div>
+
+          <div class="question-input-area" id="questionInputArea" hidden>
+            <textarea id="freeTextInput" class="free-text-input" rows="2" placeholder="Type your answer here..." aria-label="Your answer"></textarea>
+          </div>
+
+          <div class="question-feedback" id="questionFeedback" hidden>
+            <div class="feedback-icon" id="feedbackIcon"></div>
+            <div class="feedback-content">
+              <p class="feedback-verdict" id="feedbackVerdict"></p>
+              <p class="feedback-explanation" id="feedbackExplanation"></p>
+              <div class="feedback-model" id="feedbackModel" hidden>
+                <span class="model-label" id="modelAnswerLabel">Model answer:</span>
+                <span class="model-text" id="feedbackModelText"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="question-actions">
+            <button class="btn btn-primary btn-submit" id="submitAnswerBtn" type="button" disabled>
+              <span id="submitLabel">Submit Answer</span>
+            </button>
+            <button class="btn btn-primary btn-next" id="nextQuestionBtn" type="button" hidden>
+              <span id="nextLabel">Next Question</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="completionView" class="unit-view" hidden>
+      <div class="container completion-container">
+        <div class="completion-card">
+          <div class="completion-confetti" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+
+          <div class="completion-icon">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+
+          <h2 class="completion-title" id="completionTitle">Great Job!</h2>
+          <p class="completion-subtitle" id="completionSubtitle">You completed Reading!</p>
+
+          <div class="completion-score">
+            <span class="completion-score-label" id="completionScoreLabel">Your Score</span>
+            <span class="completion-score-value" id="completionScoreValue">0 / 60</span>
+          </div>
+
+          <div class="completion-stats">
+            <div class="completion-stat completion-stat-correct">
+              <i class="fa-solid fa-check"></i>
+              <span><strong id="completionCorrect">0</strong> <span id="completionCorrectLabel">Correct</span></span>
+            </div>
+            <div class="completion-stat completion-stat-incorrect">
+              <i class="fa-solid fa-xmark"></i>
+              <span><strong id="completionIncorrect">0</strong> <span id="completionIncorrectLabel">Incorrect</span></span>
+            </div>
+          </div>
+
+          <div class="completion-actions">
+            <button class="btn btn-secondary btn-retry" id="retrySectionBtn" type="button">
+              <i class="fa-solid fa-rotate-right"></i>
+              <span id="retryLabel">Retry Section</span>
+            </button>
+            <a href="unit-1.html" class="btn btn-primary btn-back-unit" id="backToUnitBtn">
+              <i class="fa-solid fa-house"></i>
+              <span id="backToUnitLabel">Back to Unit</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer unit-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>English Quest</span>
+        </div>
+        <p class="footer-tagline">Learn Something New Every Day.</p>
+        <p class="footer-sub">Unit 1 · Reading Practice</p>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 English Quest. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/unit-1-translations.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var SECTION_ID = 'reading';
+      var UNIT_KEY = 'englishQuestUnit1';
+      var LANG_KEY = 'englishQuestLang';
+      var POINTS = 10;
+      var TOTAL_POINTS = 300;
+
+      var lang = 'en';
+      try {
+        var saved = localStorage.getItem(LANG_KEY);
+        if (saved === 'ar') lang = 'ar';
+      } catch (e) {}
+
+      var questions = buildQuestions();
+      var state = {
+        index: 0,
+        selected: null,
+        text: '',
+        answered: false,
+        correctCount: 0,
+        score: 0
+      };
+
+      var dom = {
+        exerciseView: document.getElementById('exerciseView'),
+        completionView: document.getElementById('completionView'),
+        sectionName: document.getElementById('exerciseSectionName'),
+        scorePill: document.getElementById('exerciseScore'),
+        counter: document.getElementById('questionCounter'),
+        progressPercent: document.getElementById('questionProgressPercent'),
+        progressFill: document.getElementById('questionProgressFill'),
+        typeTag: document.getElementById('questionTypeTag'),
+        points: document.getElementById('questionPoints'),
+        qText: document.getElementById('questionText'),
+        options: document.getElementById('questionOptions'),
+        inputArea: document.getElementById('questionInputArea'),
+        freeInput: document.getElementById('freeTextInput'),
+        feedback: document.getElementById('questionFeedback'),
+        feedbackIcon: document.getElementById('feedbackIcon'),
+        feedbackVerdict: document.getElementById('feedbackVerdict'),
+        feedbackExplanation: document.getElementById('feedbackExplanation'),
+        feedbackModel: document.getElementById('feedbackModel'),
+        feedbackModelText: document.getElementById('feedbackModelText'),
+        modelAnswerLabel: document.getElementById('modelAnswerLabel'),
+        submitBtn: document.getElementById('submitAnswerBtn'),
+        submitLabel: document.getElementById('submitLabel'),
+        nextBtn: document.getElementById('nextQuestionBtn'),
+        nextLabel: document.getElementById('nextLabel'),
+        exitLabel: document.getElementById('exitLabel'),
+        backHomeLabel: document.getElementById('backHomeLabel'),
+        unitLabelBadge: document.getElementById('unitLabelBadge'),
+        langSwitcher: document.getElementById('langSwitcher'),
+        langCurrent: document.getElementById('langCurrent'),
+        navFill: document.getElementById('navProgressFill'),
+        navText: document.getElementById('navProgressText'),
+        completionTitle: document.getElementById('completionTitle'),
+        completionSubtitle: document.getElementById('completionSubtitle'),
+        completionScoreLabel: document.getElementById('completionScoreLabel'),
+        completionScoreValue: document.getElementById('completionScoreValue'),
+        completionCorrect: document.getElementById('completionCorrect'),
+        completionIncorrect: document.getElementById('completionIncorrect'),
+        completionCorrectLabel: document.getElementById('completionCorrectLabel'),
+        completionIncorrectLabel: document.getElementById('completionIncorrectLabel'),
+        retryBtn: document.getElementById('retrySectionBtn'),
+        retryLabel: document.getElementById('retryLabel'),
+        backToUnitLabel: document.getElementById('backToUnitLabel'),
+        readingPassage: document.getElementById('readingPassage'),
+        readingPassageTitle: document.getElementById('readingPassageTitle'),
+        readingPassageBody: document.getElementById('readingPassageBody')
+      };
+
+      function buildQuestions() {
+        var list = [];
+        var section = window.UNIT_1_TRANSLATIONS[SECTION_ID];
+        for (var i = 1; i <= 6; i++) {
+          var q = section['q' + i];
+          if (!q) continue;
+          var type = 'multipleChoice';
+          if (q.acceptedAnswers) type = 'shortAnswer';
+          else if (q.options && q.options.en && q.correct && q.options.en.indexOf(q.correct.en) === -1) type = 'ordering';
+          list.push({
+            number: i,
+            type: type,
+            text: q.text,
+            options: q.options,
+            correct: q.correct,
+            explanation: q.explanation,
+            acceptedAnswers: q.acceptedAnswers,
+            modelAnswer: q.modelAnswer,
+            points: POINTS
+          });
+        }
+        return list;
+      }
+
+      function typeLabel(type) {
+        if (type === 'shortAnswer') return unit1T('common.type.shortAnswer', lang);
+        if (type === 'ordering') return unit1T('common.type.ordering', lang);
+        if (type === 'fillBlank') return unit1T('common.type.fillBlank', lang);
+        return unit1T('common.type.multipleChoice', lang);
+      }
+
+      function normalize(str) {
+        if (typeof str !== 'string') return '';
+        return str.toLowerCase()
+          .replace(/[\u2018\u2019']/g, "'")
+          .replace(/[\u201C\u201D]/g, '"')
+          .replace(/[.,!?;:\u2014\u2013\-]/g, ' ')
+          .replace(/\s+/g, ' ')
+          .trim();
+      }
+
+      function escapeHtml(str) {
+        if (typeof str !== 'string') return '';
+        return str
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var t = a[i]; a[i] = a[j]; a[j] = t;
+        }
+        return a;
+      }
+
+      function loadProgress() {
+        try {
+          var raw = localStorage.getItem(UNIT_KEY);
+          if (!raw) return { sections: {}, xp: 0 };
+          var parsed = JSON.parse(raw);
+          return { sections: parsed.sections || {}, xp: Number(parsed.xp) || 0 };
+        } catch (e) {
+          return { sections: {}, xp: 0 };
+        }
+      }
+
+      function saveProgress(progress) {
+        try {
+          progress.lastUpdated = Date.now();
+          localStorage.setItem(UNIT_KEY, JSON.stringify(progress));
+        } catch (e) {}
+      }
+
+      function applyLangToDoc() {
+        document.documentElement.setAttribute('lang', lang);
+        document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+        if (dom.langCurrent) dom.langCurrent.textContent = lang === 'ar' ? 'AR' : 'EN';
+        var sectionName = unit1T(SECTION_ID + '.name', lang);
+        document.title = (lang === 'ar' ? 'مهمة الإنجليزية · ' : 'English Quest · ')
+          + sectionName + ' · ' + unit1T('common.nav.unitLabel', lang);
+      }
+
+      function renderReadingPassage() {
+        if (!dom.readingPassage || !dom.readingPassageBody) return;
+        var reading = window.UNIT_1_TRANSLATIONS.reading;
+        if (!reading || !reading.passage) return;
+        var paragraphs = reading.passage[lang] || reading.passage.en;
+        dom.readingPassageBody.innerHTML = paragraphs.map(function (p) {
+          return '<p>' + escapeHtml(p) + '</p>';
+        }).join('');
+        if (dom.readingPassageTitle) {
+          dom.readingPassageTitle.textContent = unit1T('common.exercise.readingTitle', lang);
+        }
+      }
+
+      function renderStatic() {
+        if (dom.backHomeLabel) dom.backHomeLabel.textContent = unit1T('common.nav.backHome', lang);
+        if (dom.unitLabelBadge) dom.unitLabelBadge.textContent = unit1T('common.nav.unitLabel', lang);
+        if (dom.sectionName) dom.sectionName.textContent = unit1T(SECTION_ID + '.name', lang);
+        if (dom.exitLabel) dom.exitLabel.textContent = unit1T('common.exercise.exit', lang);
+        if (dom.modelAnswerLabel) dom.modelAnswerLabel.textContent = unit1T('common.feedback.modelAnswer', lang) + ':';
+        renderReadingPassage();
+      }
+
+      function renderProgress() {
+        var total = questions.length;
+        var current = state.index + 1;
+        if (dom.counter) {
+          dom.counter.textContent = unit1T('common.exercise.question', lang) + ' ' + current + ' ' + unit1T('common.exercise.of', lang) + ' ' + total;
+        }
+        var pct = Math.round(((current - 1) / total) * 100);
+        if (dom.progressFill) dom.progressFill.style.width = pct + '%';
+        if (dom.progressPercent) dom.progressPercent.textContent = pct + '%';
+
+        var progress = loadProgress();
+        var earned = 0;
+        Object.keys(progress.sections).forEach(function (id) {
+          var s = progress.sections[id];
+          if (s && s.completed) earned += Number(s.score) || 0;
+        });
+        var unitPct = TOTAL_POINTS > 0 ? Math.round((earned / TOTAL_POINTS) * 100) : 0;
+        if (dom.navFill) dom.navFill.style.width = unitPct + '%';
+        if (dom.navText) dom.navText.textContent = unitPct + '%';
+      }
+
+      function resetFeedback() {
+        if (!dom.feedback) return;
+        dom.feedback.hidden = true;
+        dom.feedback.classList.remove('feedback-correct', 'feedback-incorrect');
+        if (dom.feedbackVerdict) dom.feedbackVerdict.textContent = '';
+        if (dom.feedbackExplanation) dom.feedbackExplanation.textContent = '';
+        if (dom.feedbackModel) dom.feedbackModel.hidden = true;
+        if (dom.feedbackModelText) dom.feedbackModelText.textContent = '';
+        if (dom.feedbackIcon) dom.feedbackIcon.innerHTML = '';
+      }
+
+      function renderQuestion() {
+        var q = questions[state.index];
+        if (!q) return;
+
+        state.selected = null;
+        state.text = '';
+        state.answered = false;
+
+        renderProgress();
+        resetFeedback();
+
+        if (dom.typeTag) dom.typeTag.textContent = typeLabel(q.type);
+        if (dom.points) dom.points.textContent = q.points + ' ' + unit1T(q.points === 1 ? 'common.exercise.point' : 'common.exercise.points', lang);
+        if (dom.qText) dom.qText.textContent = q.text[lang] || q.text.en;
+
+        if (dom.submitBtn) {
+          dom.submitBtn.disabled = true;
+          dom.submitBtn.hidden = false;
+        }
+        if (dom.submitLabel) dom.submitLabel.textContent = unit1T('common.action.submit', lang);
+
+        if (dom.nextBtn) {
+          dom.nextBtn.hidden = true;
+          var isLast = state.index === questions.length - 1;
+          if (dom.nextLabel) {
+            dom.nextLabel.textContent = isLast
+              ? unit1T('common.action.finish', lang)
+              : unit1T('common.action.next', lang);
+          }
+        }
+
+        if (q.options && q.options.en && q.options.en.length) {
+          if (dom.inputArea) dom.inputArea.hidden = true;
+          renderOptions(q);
+        } else {
+          if (dom.options) dom.options.innerHTML = '';
+          renderInput(q);
+        }
+      }
+
+      function renderOptions(q) {
+        if (!dom.options) return;
+        dom.options.innerHTML = '';
+        var opts = q.type === 'ordering' ? shuffle(q.options[lang] || q.options.en) : (q.options[lang] || q.options.en);
+        var letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+        opts.forEach(function (opt, i) {
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'option-btn';
+          btn.setAttribute('data-option', opt);
+          btn.innerHTML = '<span class="option-marker">' + (letters[i] || (i + 1)) + '</span><span class="option-text">' + escapeHtml(opt) + '</span>';
+          btn.addEventListener('click', function () { selectOption(btn, opt); });
+          dom.options.appendChild(btn);
+        });
+      }
+
+      function selectOption(btn, value) {
+        if (state.answered) return;
+        var all = dom.options.querySelectorAll('.option-btn');
+        for (var i = 0; i < all.length; i++) all[i].classList.remove('selected');
+        btn.classList.add('selected');
+        state.selected = value;
+        if (dom.submitBtn) dom.submitBtn.disabled = false;
+
+        if (dom.feedback && !dom.feedback.hidden && dom.feedback.classList.contains('feedback-incorrect')) {
+          var verdict = dom.feedbackVerdict ? dom.feedbackVerdict.textContent : '';
+          var promptOption = lang === 'ar' ? 'يرجى اختيار إجابة أولاً.' : 'Please choose an answer first.';
+          var promptText = lang === 'ar' ? 'يرجى كتابة إجابة أولاً.' : 'Please type an answer first.';
+          if (verdict === promptOption || verdict === promptText) {
+            resetFeedback();
+          }
+        }
+      }
+
+      function renderInput(q) {
+        if (!dom.inputArea || !dom.freeInput) return;
+        dom.inputArea.hidden = false;
+        dom.freeInput.value = '';
+        dom.freeInput.disabled = false;
+        dom.freeInput.rows = q.type === 'shortAnswer' ? 2 : 3;
+        dom.freeInput.placeholder = lang === 'ar' ? 'اكتب إجابتك هنا...' : 'Type your answer here...';
+        dom.freeInput.oninput = function () {
+          state.text = dom.freeInput.value.trim();
+          if (dom.submitBtn) dom.submitBtn.disabled = state.text.length === 0;
+
+          if (state.text.length > 0 && dom.feedback && !dom.feedback.hidden) {
+            if (dom.feedback.classList.contains('feedback-incorrect')) {
+              var verdict = dom.feedbackVerdict ? dom.feedbackVerdict.textContent : '';
+              var promptOption = lang === 'ar' ? 'يرجى اختيار إجابة أولاً.' : 'Please choose an answer first.';
+              var promptText = lang === 'ar' ? 'يرجى كتابة إجابة أولاً.' : 'Please type an answer first.';
+              if (verdict === promptOption || verdict === promptText) {
+                resetFeedback();
+              }
+            }
+          }
+        };
+      }
+
+      function lockInput() {
+        if (dom.freeInput) dom.freeInput.disabled = true;
+        if (dom.options) {
+          var all = dom.options.querySelectorAll('.option-btn');
+          for (var i = 0; i < all.length; i++) all[i].disabled = true;
+        }
+      }
+
+      function highlightOptions(q, picked) {
+        if (!dom.options) return;
+        var expected = normalize(q.correct[lang] || q.correct.en);
+        var chosen = normalize(picked);
+        var all = dom.options.querySelectorAll('.option-btn');
+        for (var i = 0; i < all.length; i++) {
+          var btn = all[i];
+          var val = normalize(btn.getAttribute('data-option'));
+          btn.classList.remove('selected');
+          if (val === expected) btn.classList.add('correct');
+          else if (val === chosen) btn.classList.add('incorrect');
+          else btn.classList.add('dimmed');
+        }
+      }
+
+      function evaluate(q) {
+        if (q.options && q.options.en && q.options.en.length) {
+          return { correct: normalize(state.selected) === normalize(q.correct[lang] || q.correct.en), userAnswer: state.selected };
+        }
+        if (q.acceptedAnswers && q.acceptedAnswers.en) {
+          var user = normalize(state.text);
+          if (!user) return { correct: false, userAnswer: state.text };
+          var list = q.acceptedAnswers[lang] || q.acceptedAnswers.en;
+          var ok = list.some(function (a) { return user.indexOf(normalize(a)) !== -1; });
+          if (!ok) {
+            var words = state.text.trim().split(/\s+/).filter(Boolean).length;
+            if (q.type === 'shortAnswer' && words >= 3) ok = true;
+          }
+          return { correct: ok, userAnswer: state.text };
+        }
+        return { correct: false, userAnswer: state.text };
+      }
+
+      function showEmptyPrompt(q, kind) {
+        if (!dom.feedback) return;
+        dom.feedback.hidden = false;
+        dom.feedback.classList.remove('feedback-correct');
+        dom.feedback.classList.add('feedback-incorrect');
+        if (dom.feedbackIcon) {
+          dom.feedbackIcon.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>';
+        }
+        if (dom.feedbackVerdict) {
+          dom.feedbackVerdict.textContent = kind === 'text'
+            ? (lang === 'ar' ? 'يرجى كتابة إجابة أولاً.' : 'Please type an answer first.')
+            : (lang === 'ar' ? 'يرجى اختيار إجابة أولاً.' : 'Please choose an answer first.');
+        }
+        if (dom.feedbackExplanation) {
+          dom.feedbackExplanation.textContent = lang === 'ar'
+            ? 'لا يمكنك المتابعة دون تقديم إجابة.'
+            : 'You cannot continue without submitting an answer.';
+        }
+        if (dom.feedbackModel) dom.feedbackModel.hidden = true;
+      }
+
+      function showFeedback(result, q) {
+        if (!dom.feedback) return;
+        dom.feedback.hidden = false;
+        dom.feedback.classList.remove('feedback-correct', 'feedback-incorrect');
+        if (result.correct) {
+          dom.feedback.classList.add('feedback-correct');
+          if (dom.feedbackIcon) dom.feedbackIcon.innerHTML = '<i class="fa-solid fa-check"></i>';
+          if (dom.feedbackVerdict) dom.feedbackVerdict.textContent = unit1T('common.feedback.correct', lang);
+        } else {
+          dom.feedback.classList.add('feedback-incorrect');
+          if (dom.feedbackIcon) dom.feedbackIcon.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+          if (dom.feedbackVerdict) dom.feedbackVerdict.textContent = unit1T('common.feedback.incorrect', lang);
+        }
+        if (dom.feedbackExplanation) dom.feedbackExplanation.textContent = q.explanation[lang] || q.explanation.en;
+        var showModel = q.modelAnswer && (!result.correct || !q.options);
+        if (dom.feedbackModel && dom.feedbackModelText) {
+          if (showModel) {
+            dom.feedbackModel.hidden = false;
+            if (dom.modelAnswerLabel) dom.modelAnswerLabel.textContent = unit1T('common.feedback.modelAnswer', lang) + ':';
+            dom.feedbackModelText.textContent = q.modelAnswer[lang] || q.modelAnswer.en;
+          } else {
+            dom.feedbackModel.hidden = true;
+          }
+        }
+      }
+
+      function submit() {
+        if (state.answered) return;
+        var q = questions[state.index];
+        if (!q) return;
+
+        var hasOptions = q.options && q.options.en && q.options.en.length;
+        var hasText = state.text.trim().length > 0;
+
+        if (hasOptions && !state.selected) {
+          showEmptyPrompt(q, 'option');
+          return;
+        }
+        if (!hasOptions && !hasText) {
+          showEmptyPrompt(q, 'text');
+          return;
+        }
+
+        var result = evaluate(q);
+        state.answered = true;
+        if (result.correct) {
+          state.correctCount += 1;
+          state.score += q.points;
+          if (dom.scorePill) dom.scorePill.textContent = String(state.score);
+        }
+        if (hasOptions) highlightOptions(q, state.selected);
+        lockInput();
+        showFeedback(result, q);
+
+        if (dom.submitBtn) dom.submitBtn.hidden = true;
+        if (dom.nextBtn) {
+          dom.nextBtn.hidden = false;
+          var isLast = state.index === questions.length - 1;
+          if (dom.nextLabel) {
+            dom.nextLabel.textContent = isLast
+              ? unit1T('common.action.finish', lang)
+              : unit1T('common.action.next', lang);
+          }
+          dom.nextBtn.focus();
+        }
+      }
+
+      function next() {
+        if (!state.answered) return;
+        var isLast = state.index === questions.length - 1;
+        if (isLast) { finish(); return; }
+        state.index += 1;
+        renderQuestion();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function finish() {
+        var totalPoints = questions.reduce(function (s, q) { return s + q.points; }, 0);
+        var progress = loadProgress();
+        progress.sections[SECTION_ID] = {
+          completed: true,
+          score: state.score,
+          total: totalPoints,
+          correct: state.correctCount
+        };
+        progress.xp = Object.keys(progress.sections).reduce(function (sum, id) {
+          var s = progress.sections[id];
+          return sum + (s && s.completed ? s.score : 0);
+        }, 0);
+        saveProgress(progress);
+        renderCompletion();
+      }
+
+      function renderCompletion() {
+        var totalPoints = questions.reduce(function (s, q) { return s + q.points; }, 0);
+        var sectionName = unit1T(SECTION_ID + '.name', lang);
+
+        if (dom.completionTitle) dom.completionTitle.textContent = unit1T('common.completion.title', lang);
+        if (dom.completionSubtitle) {
+          var subtitle = unit1T('common.completion.subtitle', lang);
+          dom.completionSubtitle.textContent = subtitle.replace('{section}', sectionName);
+        }
+        if (dom.completionScoreLabel) dom.completionScoreLabel.textContent = unit1T('common.completion.scoreLabel', lang);
+        if (dom.completionScoreValue) dom.completionScoreValue.textContent = state.score + ' / ' + totalPoints;
+        if (dom.completionCorrect) dom.completionCorrect.textContent = String(state.correctCount);
+        if (dom.completionIncorrect) dom.completionIncorrect.textContent = String(questions.length - state.correctCount);
+        if (dom.completionCorrectLabel) dom.completionCorrectLabel.textContent = unit1T('common.completion.correct', lang);
+        if (dom.completionIncorrectLabel) dom.completionIncorrectLabel.textContent = unit1T('common.completion.incorrect', lang);
+        if (dom.retryLabel) dom.retryLabel.textContent = unit1T('common.action.retry', lang);
+        if (dom.backToUnitLabel) dom.backToUnitLabel.textContent = unit1T('common.action.backToUnit', lang);
+
+        if (dom.exerciseView) dom.exerciseView.hidden = true;
+        if (dom.completionView) dom.completionView.hidden = false;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function restart() {
+        state.index = 0;
+        state.selected = null;
+        state.text = '';
+        state.answered = false;
+        state.correctCount = 0;
+        state.score = 0;
+        if (dom.scorePill) dom.scorePill.textContent = '0';
+        if (dom.completionView) dom.completionView.hidden = true;
+        if (dom.exerciseView) dom.exerciseView.hidden = false;
+        renderQuestion();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      applyLangToDoc();
+      renderStatic();
+      renderQuestion();
+
+      if (dom.submitBtn) dom.submitBtn.addEventListener('click', function (e) { e.preventDefault(); submit(); });
+      if (dom.nextBtn) dom.nextBtn.addEventListener('click', function (e) { e.preventDefault(); next(); });
+      if (dom.retryBtn) dom.retryBtn.addEventListener('click', function (e) { e.preventDefault(); restart(); });
+
+      if (dom.langSwitcher) {
+        dom.langSwitcher.addEventListener('click', function (e) {
+          e.preventDefault();
+          lang = lang === 'en' ? 'ar' : 'en';
+          try { localStorage.setItem(LANG_KEY, lang); } catch (err) {}
+          applyLangToDoc();
+          renderStatic();
+          renderProgress();
+          renderQuestion();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
